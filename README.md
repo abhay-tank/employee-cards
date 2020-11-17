@@ -6,3 +6,5 @@ We are using grid to display employee cards efficiently.
 Employee images are placeholders fetched from Picsum placeholder API "https://picsum.photos/1000".
 
 However user details is fetched from jsonplaceholder API "https://jsonplaceholder.typicode.com/users" .
+
+Website is hosted using Github pages at https://abhay-tank.github.io/employee-cards/
