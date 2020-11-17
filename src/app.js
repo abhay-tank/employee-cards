@@ -3,7 +3,6 @@ let api = "https://jsonplaceholder.typicode.com/users";
 window.onload = () => {
   // Fetch data parallel with loading page
   fetchEmployees();
-  console.log("Hello World");
 };
 
 fetchEmployees = async () => {
@@ -14,10 +13,11 @@ fetchEmployees = async () => {
       })
       .then((users) => {
         let parentContainer = document.getElementById("employeeDataContainer");
+        console.log("User Details 👇");
         users.forEach((user) => {
           console.log(user);
           let gridCard = document.createElement("div");
-          gridCard.setAttribute("class", "grid-card");
+          gridCard.setAttribute("class", "grid-card card");
           let userName = document.createElement("h2");
           userName.innerHTML = user.name;
           let userEmail = document.createElement("a");
