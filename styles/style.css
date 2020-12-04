@@ -95,3 +95,16 @@ body {
 .footer-card h2 {
   margin-top: auto;
 }
+
+@media screen and (max-width: 800px) {
+  #company-logo {
+    display: none;
+  }
+
+  .banner-card {
+    text-align: center;
+  }
+  .banner-card .title {
+    font-size: 4rem;
+  }
+}
