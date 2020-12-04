@@ -1,10 +1,15 @@
 # employee-cards
+
 A webpage that fetches data from an API and displays employee information using javascript.
 
 We are using grid to display employee cards efficiently.
 
-Employee images are placeholders fetched from Picsum placeholder API "https://picsum.photos/1000".
+## Employee API & Schema
 
-However user details is fetched from jsonplaceholder API "https://jsonplaceholder.typicode.com/users" .
+Employee details are fetched from Mockaroo API.
+
+### Schema is as
+
+id | firstName | lastName | email | imageURL | website
 
 Website is hosted using Github pages at https://abhay-tank.github.io/employee-cards/

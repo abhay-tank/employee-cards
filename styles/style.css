@@ -34,7 +34,7 @@ body {
 /* Scrollbar end */
 
 .container {
-  margin: 0;
+  margin: 1rem 0;
   padding: 0;
   width: 100%;
   display: grid;
@@ -51,7 +51,7 @@ body {
   margin: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
 }
 
@@ -68,7 +68,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
-.card img {
+.grid-card img {
   width: 100%;
 }
 
@@ -78,10 +78,20 @@ body {
   font-weight: bold;
 }
 
+.card h3 {
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .card a {
   text-decoration: none;
   color: white;
   margin: 1rem;
   font-size: 1.5rem;
   font-weight: lighter;
+}
+
+.footer-card h2 {
+  margin-top: auto;
 }

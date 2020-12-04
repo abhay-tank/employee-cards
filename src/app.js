@@ -1,48 +1,18 @@
-let api = "https://jsonplaceholder.typicode.com/users";
-
+import { fetchEmployeesData } from "./services/fetchEmployeesData.js";
+import { createEmployeeMarkup } from "./helper/createEmployeeCard.js";
+import { createCompanyCard } from "./helper/createFooterCard.js";
+let employeeData;
 window.onload = () => {
-  // Fetch data parallel with loading page
-  fetchEmployees();
-};
-
-fetchEmployees = async () => {
-  try {
-    await fetch(api)
-      .then((response) => {
-        return response.json();
-      })
-      .then((users) => {
-        let parentContainer = document.getElementById("employeeDataContainer");
-        console.log("User Details 👇");
-        users.forEach((user) => {
-          console.log(user);
-          let gridCard = document.createElement("div");
-          gridCard.setAttribute("class", "grid-card card");
-          let userName = document.createElement("h2");
-          userName.innerHTML = user.name;
-          let userEmail = document.createElement("a");
-          userEmail.setAttribute("href", `mailto:${user.email}`);
-          userEmail.innerHTML = user.email;
-          let userWebsite = document.createElement("a");
-          userWebsite.setAttribute("href", `${user.website}`);
-          userWebsite.setAttribute("target", "_blank");
-          userWebsite.innerHTML = user.website;
-          let userImg = document.createElement("img");
-          userImg.setAttribute("src", "https://picsum.photos/1000");
-          gridCard.appendChild(userImg);
-          gridCard.appendChild(userName);
-          gridCard.appendChild(userEmail);
-          gridCard.appendChild(userWebsite);
-          parentContainer.appendChild(gridCard);
-        });
+  const parentContainer = document.getElementById("employeeDataContainer");
+  employeeData = fetchEmployeesData();
+  employeeData
+    .then((employees) => {
+      employees.forEach((employee) => {
+        parentContainer.appendChild(createEmployeeMarkup(employee));
       });
-  } catch (error) {
-    throw new Error("Error in API call", error);
-  }
+      parentContainer.appendChild(createCompanyCard());
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
 };
-
-// fetchEmployees = async () => {
-//   response = await fetch(api);
-//   data = await response.json();
-//   console.log(data);
-// };
