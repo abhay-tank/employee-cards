@@ -96,6 +96,27 @@ body {
   margin-top: auto;
 }
 
+.loading {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-yellow);
+}
+
+.loading h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 800px) {
   #company-logo {
     display: none;
