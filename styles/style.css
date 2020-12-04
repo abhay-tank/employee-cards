@@ -117,6 +117,10 @@ body {
   font-weight: bold;
 }
 
+.loading img {
+  width: 10rem;
+}
+
 @media screen and (max-width: 800px) {
   #company-logo {
     display: none;
